@@ -9,7 +9,7 @@ You've seen [karpathy/minGPT](https://github.com/karpathy/mingpt).
 
 You've even seen [karpathy/nanoGPT](https://github.com/karpathy/nanogpt)!
 
-You might have seen [picoGPT](https://github.com/jaymody/picoGPT)!
+You might have even seen [jaymody/picoGPT](https://github.com/jaymody/picoGPT)!
 
 But you have never seen smolGPT!!!
 
@@ -26,7 +26,7 @@ What makes **smolGPT** special? It’s built using **[pycandle-2](https://github
 picoGPT features:
 * Fast? ❌ smolPGT is supaSLOW 🐌 We say 🚫 to CV-cache, Quantization and Distillation 
 * Training code? ✅ Yes, but very it may cause you 💢!
-* top-p sampling? ❌ top-k? ❌ temperature? ❌ categorical sampling?! ❌ greedy? ✅
+* top-p sampling? ❌ top-k? ✅ temperature? ❌ categorical sampling?! ❌ greedy? ✅
 * Self-made??? ✅✅ YESS!!! I made it completely from scratch in numpy😲😲😲 
 * Scalable? **(੭˃ᴗ˂)੭** You may build whatever architecture you want with **PyCandle**. 
 
@@ -40,7 +40,7 @@ To install **smolGPT** with **pycandle-2**, follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/smolGPT.git
+   git clone https://github.com/TimaGitHub/smolGPT.git
    cd smolGPT
    ```
 
@@ -49,17 +49,9 @@ To install **smolGPT** with **pycandle-2**, follow these simple steps:
    pip install -r requirements.txt
    ```
 
-3. Install **pycandle-2**:
-   Since **pycandle-2** is your custom library, we’ll need to install it manually:
+3. Run the model:
    ```bash
-   git clone https://github.com/TimaGitHub/pycandle-2.git
-   cd pycandle-2
-   pip install .
-   ```
-
-4. Run the model:
-   ```bash
-   python smolgpt.py
+   python main.py
    ```
 
 And that’s it! You’re ready to start generating text with **smolGPT**. 😅
@@ -68,27 +60,13 @@ And that’s it! You’re ready to start generating text with **smolGPT**. 😅
 
 ### 🚀 Example Usage
 
-With **smolGPT**, you can quickly interact with the model and generate text or engage in a conversation. Here’s an example of an interaction:
+With **smolGPT**, you can quickly generate text. Here’s an example:
 
-```
-You: Hey, smolGPT! How are you doing?
-smolGPT: Hey! I'm here... small, but I can do a lot!
-You: Tell me something funny.
-smolGPT: Why do programmers hate training cats? Because they can never make them sit in a forever loop. 🐱
+```bash
+python main.py --prompt Hello i am a language model, --max_new_tokens 30 --model 1542M --device gpu --topk 30
 ```
 
 The model’s lighthearted and playful nature makes it a fun tool for experimenting with GPT-like architectures! 😆
-
----
-
-### 🔧 How to Train **smolGPT**?
-
-Want to train your own **smolGPT**? Training the model is simple with **pycandle-2**. Here’s how:
-
-1. Download a dataset (e.g., **WikiText-2** or your own custom dataset).
-2. Run the training script to fine-tune or train the model from scratch.
-
-The process is designed to be straightforward, and you can find additional details in the [pycandle-2 README](https://github.com/TimaGitHub/pycandle-2) for training instructions.
 
 ---
 
