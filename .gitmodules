@@ -1,0 +1,3 @@
+[submodule "pycandle-2"]
+	path = pycandle-2
+	url = https://github.com/TimaGitHub/pycandle-2

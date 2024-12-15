@@ -1,0 +1,9 @@
+scipy==1.14.1
+sklearn==1.6.0
+numpy==2.1.1
+regex==2024.11.6 # get value
+tiktoken==0.8.0 # tokenizer
+cupy==13.3.0 # gpu
+argparse==1.4.0 # cli
+tqdm==4.66.5 # progress bar
+transformers==4.47.0 # load weights
