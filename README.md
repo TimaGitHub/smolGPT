@@ -25,7 +25,7 @@ What makes **smolGPT** special? It’s built using **[pycandle-2](https://github
 
 picoGPT features:
 * Fast? ❌ smolPGT is supaSLOW 🐌 We say 🚫 to CV-cache, Quantization and Distillation 
-* Training code? ✅ Yes, but very it may cause you 💢!
+* Training code? ✅ Yes, but it may cause you 💢!
 * top-p sampling? ❌ top-k? ✅ temperature? ❌ categorical sampling?! ❌ greedy? ✅
 * Self-made??? ✅✅ YESS!!! I made it completely from scratch in numpy😲😲😲 
 * Scalable? **(੭˃ᴗ˂)੭** You may build whatever architecture you want with **PyCandle**. 
@@ -63,10 +63,17 @@ And that’s it! You’re ready to start generating text with **smolGPT**. 😅
 With **smolGPT**, you can quickly generate text. Here’s an example:
 
 ```bash
-python main.py --prompt Hello i am a language model, --max_new_tokens 30 --model 1542M --device gpu --topk 30
+python main.py --prompt "Hello! i am a language model," --max_new_tokens 30 --model 124M --device gpu --topk 30
+```
+#### **output 😅**
+
+```bach
+Hello! i am a language model, I have no language background and this is not a problem
+
+Anonymous 01/11/15 (Thu) 04:09:19 AM No.
 ```
 
-The model’s lighthearted and playful nature makes it a fun tool for experimenting with GPT-like architectures! 😆
+The model’s lighthearted and playful nature makes it a fun tool for experimenting with GPT-like architectures (**124M**, **345M**, **762M**, **1542M**) 😆
 
 ---
 
