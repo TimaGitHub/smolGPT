@@ -1,5 +1,5 @@
 scipy==1.14.1
-sklearn==1.6.0
+sklearn==1.4.0
 numpy==2.1.1
 regex==2024.11.6 # get value
 tiktoken==0.8.0 # tokenizer
