@@ -30,7 +30,7 @@ picoGPT features:
 * Self-made??? ✅✅ YESS!!! I made it completely from scratch in numpy😲😲😲 
 * Scalable? **(੭˃ᴗ˂)੭** You may build whatever architecture you want with **PyCandle**. 
 
-**GPT2-3-4?**, **Lamma 1-2-3?** 😎👌🔥 just provide model weights🤔
+**GPT2-3-4?**, **Llama 1-2-3?** 😎👌🔥 just provide model weights🤔
 
 
 
