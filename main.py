@@ -231,11 +231,12 @@ class GPT(nn.Module):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='pretrained gpt2')
-    parser.add_argument('--prompt', type=str, default="Hello! I am a language model,")
+    parser.add_argument('--prompt', type=str, default="Hello! I am a language model, ")
     parser.add_argument('--max_new_tokens', type=int, default=20)
     parser.add_argument('--model', type=str, default='124M')  # 124M, 345M, 762M, 1542M
     parser.add_argument('--device', type=str, default='cpu')
     parser.add_argument('--topk', type=int, default=50)
+    parser.add_argument('--eos', type=bool, default=False)
     args = parser.parse_args()
 
     assert args.model in ('124M', '345M', '762M', '1542M')
@@ -262,14 +263,24 @@ if __name__ == '__main__':
     topk = args.topk  # responsible for "creativity" or "adequacy"
     x = tokens
 
-    for i in tqdm(range(max_new_tokens)):
+    from time import sleep
+    for start_token in tokens[0]: # printing user prompt
+        output = start_token.value.astype(int).tolist()
+        print(enc.decode([output]), end="", flush=True)
+        sleep(0.3)
+
+    for i in range(max_new_tokens):
         logits = model(x)
         logits = logits[:, -1, :]
-        probs = Tensor.softmax(logits, axis=-1)
+        probs = Tensor.safe_softmax(logits, axis=-1)
         topk_indices, topk_probs = Tensor.topk(probs, topk)
         new_token = Tensor.multinomial_from_array(topk_indices, topk_probs, num_samples=1).reshape(-1, 1)
         x = Tensor.cat([x, new_token], axis=1)
+        output = x[0][-1].value.astype(int).tolist()
+        if output == 50256 and args.eos: # <|endoftext|> token
+            break
+        print(enc.decode([output]), end="", flush=True)
 
-    sample = x[0]
-    sample = sample.value.astype(int).tolist()
-    print(enc.decode(sample))
+    # sample = x[0]
+    # sample = sample.value.astype(int).tolist()
+    # print(enc.decode(sample))
