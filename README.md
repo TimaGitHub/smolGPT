@@ -75,7 +75,38 @@ Anonymous 01/11/15 (Thu) 04:09:19 AM No.
 
 The model’s lighthearted and playful nature makes it a fun tool for experimenting with GPT-like architectures (**124M**, **345M**, **762M**, **1542M**) 😆
 
+### **Some fun generations**
 ---
+#### *124M Parameters*
+```python
+prompt = "I will prove this mathematical theorem: "  
+```
+![145](https://github.com/user-attachments/assets/14456469-e0b6-466c-b5e8-b9fc111f7b31)
+
+#### *345M Parameters*
+```python
+prompt = "I will prove this mathematical theorem: "  
+```
+![345](https://github.com/user-attachments/assets/1018b84d-f601-42c7-8bb3-a0a263f34c80)
+
+#### *762M Parameters*
+```python
+prompt = "for i in range(5):"  
+```
+![762_1](https://github.com/user-attachments/assets/e32e4354-c03a-466e-8ad6-9eef54607c17)
+
+#### *762M Parameters*
+```python
+prompt = "a = [10, 35, 20, -40]\nsorted(a)\n>>>"  
+```
+![762_2](https://github.com/user-attachments/assets/dbb3cb5d-eaff-42ce-a889-9dc705a76d06)
+
+#### *762M Parameters*
+```python
+prompt = "one small step for a man"  
+```
+![762_3](https://github.com/user-attachments/assets/c14271da-a19c-4274-93f2-16677a9e85f5)
+
 
 ### 💡 Why **smolGPT**?
 
