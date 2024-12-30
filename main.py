@@ -263,11 +263,16 @@ if __name__ == '__main__':
     topk = args.topk  # responsible for "creativity" or "adequacy"
     x = tokens
 
+    import threading
     from time import sleep
-    for start_token in tokens[0]: # printing user prompt
-        output = start_token.value.astype(int).tolist()
-        print(enc.decode([output]), end="", flush=True)
-        sleep(0.3)
+    def user_prompt(text, delay=0.1):
+        for start_token in text:  # printing user prompt
+            output = start_token.value.astype(int).tolist()
+            print(enc.decode([output]), end="", flush=True)
+            sleep(delay)
+
+    thread = threading.Thread(target=user_prompt, args=(tokens[0], 0.5))
+    thread.start()
 
     for i in range(max_new_tokens):
         logits = model(x)
@@ -279,6 +284,7 @@ if __name__ == '__main__':
         output = x[0][-1].value.astype(int).tolist()
         if output == 50256 and args.eos: # <|endoftext|> token
             break
+        thread.join()
         print(enc.decode([output]), end="", flush=True)
 
     # sample = x[0]
